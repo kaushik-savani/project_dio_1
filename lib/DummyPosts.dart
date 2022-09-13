@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:project_dio_1/DummyProducts.dart';
 import 'package:project_dio_1/main.dart';
 
 class DummyPosts extends StatefulWidget {
