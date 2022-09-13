@@ -43,117 +43,103 @@ class _DummyUsersState extends State<DummyUsers> {
             title: Text("Dummy Users"),
           ),
           body: status
-              ? SingleChildScrollView(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("Users : "),
-                        ListView.builder(
-                          shrinkWrap: true,
-                          itemCount: d!.users!.length,
-                          itemBuilder: (context, index) {
-                            return Card(
-                              elevation: 3,
-                              child: ListTile(
-                                leading: Text("${d!.users![index].id}"),
-                                title: Text(
-                                    "${d!.users![index].firstName} ${d!.users![index].lastName} ${d!.users![index].maidenName}"),
-                                subtitle: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text("age :${d!.users![index].age}"),
-                                    Text("gender :${d!.users![index].gender}"),
-                                    Text("email :${d!.users![index].email}"),
-                                    Text("phone :${d!.users![index].phone}"),
-                                    Text(
-                                        "username :${d!.users![index].username}"),
-                                    Text(
-                                        "password :${d!.users![index].password}"),
-                                    Text(
-                                        "birthdate :${d!.users![index].birthDate}"),
-                                    Text("image :${d!.users![index].image}"),
-                                    Text(
-                                        "bloodGroup :${d!.users![index].bloodGroup}"),
-                                    Text("height :${d!.users![index].height}"),
-                                    Text("weight :${d!.users![index].weight}"),
-                                    Text(
-                                        "eyeColor :${d!.users![index].eyeColor}"),
-                                    Text("hair :"),
-                                    Text(
-                                        "   color :${d!.users![index].hair!.color}"),
-                                    Text(
-                                        "   type :${d!.users![index].hair!.type}"),
-                                    Text("domain :${d!.users![index].domain}"),
-                                    Text("ip :${d!.users![index].ip}"),
-                                    Text("address :"),
-                                    Text(
-                                        "    address :${d!.users![index].address!.address}"),
-                                    Text(
-                                        "    city :${d!.users![index].address!.city}"),
-                                    Text("    coordinates :"),
-                                    Text(
-                                        "        lat :${d!.users![index].address!.coordinates!.lat}"),
-                                    Text(
-                                        "        lag :${d!.users![index].address!.coordinates!.lat}"),
-                                    Text(
-                                        "   postalcode :${d!.users![index].address!.postalCode}"),
-                                    Text(
-                                        "   state :${d!.users![index].address!.state}"),
-                                    Text(
-                                        "macAddress :${d!.users![index].macAddress}"),
-                                    Text(
-                                        "university :${d!.users![index].university}"),
-                                    Text("bank :"),
-                                    Text(
-                                        "    cardExpire :${d!.users![index].bank!.cardExpire}"),
-                                    Text(
-                                        "    cardNumber :${d!.users![index].bank!.cardNumber}"),
-                                    Text(
-                                        "    cardType :${d!.users![index].bank!.cardType}"),
-                                    Text(
-                                        "    currency :${d!.users![index].bank!.currency}"),
-                                    Text(
-                                        "    iban :${d!.users![index].bank!.iban}"),
-                                    Text("Company :"),
-                                    Text("   address :"),
-                                    Text(
-                                        "       address :${d!.users![index].company!.address!.address}"),
-                                    Text(
-                                        "       city :${d!.users![index].company!.address!.city}"),
-                                    Text("       coordinates :"),
-                                    Text(
-                                        "          lat :${d!.users![index].company!.address!.coordinates!.lat}"),
-                                    Text(
-                                        "          lag :${d!.users![index].company!.address!.coordinates!.lat}"),
-                                    Text(
-                                        "       postalcode :${d!.users![index].company!.address!.postalCode}"),
-                                    Text(
-                                        "       state :${d!.users![index].company!.address!.state}"),
-                                    Text(
-                                        "   department :${d!.users![index].company!.department}"),
-                                    Text(
-                                        "   name :${d!.users![index].company!.name}"),
-                                    Text(
-                                        "   title :${d!.users![index].company!.title}"),
-                                    Text("ein :${d!.users![index].ein}"),
-                                    Text("ssn :${d!.users![index].ssn}"),
-                                    Text(
-                                        "userAgent :${d!.users![index].userAgent}"),
-                                  ],
-                                ),
-                              ),
-                            );
-                          },
-                        ),
-                        Text("total :${d!.total}"),
-                        Text("skip :${d!.skip}"),
-                        Text("limit :${d!.limit}"),
-                      ],
-                    ),
+              ? ListView.builder(
+            shrinkWrap: true,
+            itemCount: d!.users!.length,
+            itemBuilder: (context, index) {
+              return Card(
+                elevation: 3,
+                child: ListTile(
+                  leading: Text("${d!.users![index].id}"),
+                  title: Text(
+                      "${d!.users![index].firstName} ${d!.users![index].lastName} ${d!.users![index].maidenName}"),
+                  subtitle: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("age :${d!.users![index].age}"),
+                      Text("gender :${d!.users![index].gender}"),
+                      Text("email :${d!.users![index].email}"),
+                      Text("phone :${d!.users![index].phone}"),
+                      Text(
+                          "username :${d!.users![index].username}"),
+                      Text(
+                          "password :${d!.users![index].password}"),
+                      Text(
+                          "birthdate :${d!.users![index].birthDate}"),
+                      Text("image :${d!.users![index].image}"),
+                      Text(
+                          "bloodGroup :${d!.users![index].bloodGroup}"),
+                      Text("height :${d!.users![index].height}"),
+                      Text("weight :${d!.users![index].weight}"),
+                      Text(
+                          "eyeColor :${d!.users![index].eyeColor}"),
+                      Text("hair :"),
+                      Text(
+                          "   color :${d!.users![index].hair!.color}"),
+                      Text(
+                          "   type :${d!.users![index].hair!.type}"),
+                      Text("domain :${d!.users![index].domain}"),
+                      Text("ip :${d!.users![index].ip}"),
+                      Text("address :"),
+                      Text(
+                          "    address :${d!.users![index].address!.address}"),
+                      Text(
+                          "    city :${d!.users![index].address!.city}"),
+                      Text("    coordinates :"),
+                      Text(
+                          "        lat :${d!.users![index].address!.coordinates!.lat}"),
+                      Text(
+                          "        lag :${d!.users![index].address!.coordinates!.lat}"),
+                      Text(
+                          "   postalcode :${d!.users![index].address!.postalCode}"),
+                      Text(
+                          "   state :${d!.users![index].address!.state}"),
+                      Text(
+                          "macAddress :${d!.users![index].macAddress}"),
+                      Text(
+                          "university :${d!.users![index].university}"),
+                      Text("bank :"),
+                      Text(
+                          "    cardExpire :${d!.users![index].bank!.cardExpire}"),
+                      Text(
+                          "    cardNumber :${d!.users![index].bank!.cardNumber}"),
+                      Text(
+                          "    cardType :${d!.users![index].bank!.cardType}"),
+                      Text(
+                          "    currency :${d!.users![index].bank!.currency}"),
+                      Text(
+                          "    iban :${d!.users![index].bank!.iban}"),
+                      Text("Company :"),
+                      Text("   address :"),
+                      Text(
+                          "       address :${d!.users![index].company!.address!.address}"),
+                      Text(
+                          "       city :${d!.users![index].company!.address!.city}"),
+                      Text("       coordinates :"),
+                      Text(
+                          "          lat :${d!.users![index].company!.address!.coordinates!.lat}"),
+                      Text(
+                          "          lag :${d!.users![index].company!.address!.coordinates!.lat}"),
+                      Text(
+                          "       postalcode :${d!.users![index].company!.address!.postalCode}"),
+                      Text(
+                          "       state :${d!.users![index].company!.address!.state}"),
+                      Text(
+                          "   department :${d!.users![index].company!.department}"),
+                      Text(
+                          "   name :${d!.users![index].company!.name}"),
+                      Text(
+                          "   title :${d!.users![index].company!.title}"),
+                      Text("ein :${d!.users![index].ein}"),
+                      Text("ssn :${d!.users![index].ssn}"),
+                      Text(
+                          "userAgent :${d!.users![index].userAgent}"),
+                    ],
                   ),
-                )
+                ),
+              );
+            },
+          )
               : Center(
                   child: CircularProgressIndicator(),
                 ),
@@ -276,7 +262,7 @@ class Users {
     image = json['image'];
     bloodGroup = json['bloodGroup'];
     height = json['height'];
-    weight = json['weight'];
+    weight = double.parse(json['weight'].toString());
     eyeColor = json['eyeColor'];
     hair = json['hair'] != null ? new Hair.fromJson(json['hair']) : null;
     domain = json['domain'];

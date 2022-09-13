@@ -43,46 +43,32 @@ class _DummyCommentsState extends State<DummyComments> {
             title: Text("Dummy Commets"),
           ),
           body: status
-              ? SingleChildScrollView(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("comments :"),
-                        ListView.builder(
-                          shrinkWrap: true,
-                          itemCount: d!.comments!.length,
-                          itemBuilder: (context, index) {
-                            return Card(
-                              elevation: 3,
-                              child: ListTile(
-                                leading: Text("${d!.comments![index].id}"),
-                                title:
-                                    Text("body :${d!.comments![index].body}"),
-                                subtitle: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                        "postId :${d!.comments![index].postId}"),
-                                    Text("user :"),
-                                    Text(
-                                        "   id :${d!.comments![index].user!.id}"),
-                                    Text(
-                                        "   username :${d!.comments![index].user!.username}"),
-                                  ],
-                                ),
-                              ),
-                            );
-                          },
-                        ),
-                        Text("total :${d!.total}"),
-                        Text("skip :${d!.skip}"),
-                        Text("limit :${d!.limit}"),
-                      ],
-                    ),
+              ? ListView.builder(
+            shrinkWrap: true,
+            itemCount: d!.comments!.length,
+            itemBuilder: (context, index) {
+              return Card(
+                elevation: 3,
+                child: ListTile(
+                  leading: Text("${d!.comments![index].id}"),
+                  title:
+                  Text("body :${d!.comments![index].body}"),
+                  subtitle: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                          "postId :${d!.comments![index].postId}"),
+                      Text("user :"),
+                      Text(
+                          "   id :${d!.comments![index].user!.id}"),
+                      Text(
+                          "   username :${d!.comments![index].user!.username}"),
+                    ],
                   ),
-                )
+                ),
+              );
+            },
+          )
               : Center(
                   child: CircularProgressIndicator(),
                 ),

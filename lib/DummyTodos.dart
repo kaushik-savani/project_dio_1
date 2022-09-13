@@ -43,41 +43,27 @@ class _DummyTodosState extends State<DummyTodos> {
             title: Text("Dummy Todos"),
           ),
           body: status
-              ? SingleChildScrollView(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("todos :"),
-                        ListView.builder(
-                          shrinkWrap: true,
-                          itemCount: d!.todos!.length,
-                          itemBuilder: (context, index) {
-                            return Card(
-                              elevation: 3,
-                              child: ListTile(
-                                leading: Text("${d!.todos![index].id}"),
-                                title: Text("${d!.todos![index].todo}"),
-                                subtitle: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                        "completed :${d!.todos![index].completed}"),
-                                    Text("userId :${d!.todos![index].userId}")
-                                  ],
-                                ),
-                              ),
-                            );
-                          },
-                        ),
-                        Text("total :${d!.total}"),
-                        Text("skip :${d!.skip}"),
-                        Text("limit :${d!.limit}"),
-                      ],
-                    ),
+              ? ListView.builder(
+            shrinkWrap: true,
+            itemCount: d!.todos!.length,
+            itemBuilder: (context, index) {
+              return Card(
+                elevation: 3,
+                child: ListTile(
+                  leading: Text("${d!.todos![index].id}"),
+                  title: Text("${d!.todos![index].todo}"),
+                  subtitle: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                          "completed :${d!.todos![index].completed}"),
+                      Text("userId :${d!.todos![index].userId}")
+                    ],
                   ),
-                )
+                ),
+              );
+            },
+          )
               : Center(child: CircularProgressIndicator()),
         ),
         onWillPop: goback);

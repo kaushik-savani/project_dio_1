@@ -43,30 +43,19 @@ class _DummyQuotesState extends State<DummyQuotes> {
             title: Text("Dummy Quotes"),
           ),
           body: status
-              ? SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("quotes :"),
-                      ListView.builder(
-                        shrinkWrap: true,
-                        itemCount: d!.quotes!.length,
-                        itemBuilder: (context, index) {
-                          return Card(
-                            child: ListTile(
-                              leading: Text("${d!.quotes![index].id}"),
-                              title: Text("${d!.quotes![index].author}"),
-                              subtitle: Text("${d!.quotes![index].quote}"),
-                            ),
-                          );
-                        },
-                      ),
-                      Text("total :${d!.total}"),
-                      Text("skip :${d!.skip}"),
-                      Text("limit :${d!.limit}"),
-                    ],
-                  ),
-                )
+              ? ListView.builder(
+            shrinkWrap: true,
+            itemCount: d!.quotes!.length,
+            itemBuilder: (context, index) {
+              return Card(
+                child: ListTile(
+                  leading: Text("${d!.quotes![index].id}"),
+                  title: Text("${d!.quotes![index].author}"),
+                  subtitle: Text("${d!.quotes![index].quote}"),
+                ),
+              );
+            },
+          )
               : Center(child: CircularProgressIndicator()),
         ),
         onWillPop: goback);

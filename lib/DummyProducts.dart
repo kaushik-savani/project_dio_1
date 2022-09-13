@@ -44,72 +44,55 @@ class _DummyProductsState extends State<DummyProducts> {
             title: Text("Dummy Products"),
           ),
           body: status
-              ? SingleChildScrollView(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("Products :"),
-                        ListView.builder(
-                          shrinkWrap: true,
-                          itemCount: d!.products!.length,
-                          itemBuilder: (context, index) {
-                            return Card(
-                              elevation: 3,
-                              child: ListTile(
-                                leading: Text("${d!.products![index].id}"),
-                                title: Text("${d!.products![index].title}"),
-                                subtitle: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        "description : ${d!.products![index].description}",
-                                      ),
-                                      Text(
-                                        "price : ${d!.products![index].price}",
-                                      ),
-                                      Text(
-                                        "discountPercentage : ${d!.products![index].discountPercentage}",
-                                      ),
-                                      Text(
-                                        "rating : ${d!.products![index].rating}",
-                                      ),
-                                      Text(
-                                        "stock : ${d!.products![index].stock}",
-                                      ),
-                                      Text(
-                                        "brand : ${d!.products![index].brand}",
-                                      ),
-                                      Text(
-                                        "category : ${d!.products![index].category}",
-                                      ),
-                                      Text(
-                                        "thumbnail : ${d!.products![index].thumbnail}",
-                                      ),
-                                      Text("images :"),
-                                      ListView.builder(
-                                        primary: false,
-                                        shrinkWrap: true,
-                                        itemCount:
-                                            d!.products![index].images!.length,
-                                        itemBuilder: (context, index1) {
-                                          return Text(
-                                              "  ${d!.products![index].images![index1]}");
-                                        },
-                                      )
-                                    ]),
+              ? ListView.builder(
+                  itemCount: d!.products!.length,
+                  itemBuilder: (context, index) {
+                    return Card(
+                      elevation: 3,
+                      child: ListTile(
+                        leading: Text("${d!.products![index].id}"),
+                        title: Text("${d!.products![index].title}"),
+                        subtitle: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "description : ${d!.products![index].description}",
                               ),
-                            );
-                          },
-                        ),
-                        Text("total :${d!.total}"),
-                        Text("skip :${d!.skip}"),
-                        Text("limit :${d!.limit}"),
-                      ],
-                    ),
-                  ),
+                              Text(
+                                "price : ${d!.products![index].price}",
+                              ),
+                              Text(
+                                "discountPercentage : ${d!.products![index].discountPercentage}",
+                              ),
+                              Text(
+                                "rating : ${d!.products![index].rating}",
+                              ),
+                              Text(
+                                "stock : ${d!.products![index].stock}",
+                              ),
+                              Text(
+                                "brand : ${d!.products![index].brand}",
+                              ),
+                              Text(
+                                "category : ${d!.products![index].category}",
+                              ),
+                              Text(
+                                "thumbnail : ${d!.products![index].thumbnail}",
+                              ),
+                              Text("images :"),
+                              ListView.builder(
+                                primary: false,
+                                shrinkWrap: true,
+                                itemCount: d!.products![index].images!.length,
+                                itemBuilder: (context, index1) {
+                                  return Text(
+                                      "  ${d!.products![index].images![index1]}");
+                                },
+                              )
+                            ]),
+                      ),
+                    );
+                  },
                 )
               : Center(child: CircularProgressIndicator()),
         ),
@@ -190,7 +173,7 @@ class Products {
     description = json['description'];
     price = json['price'];
     discountPercentage = json['discountPercentage'];
-    rating = json['rating'];
+    rating = double.parse(json['rating'].toString());
     stock = json['stock'];
     brand = json['brand'];
     category = json['category'];
